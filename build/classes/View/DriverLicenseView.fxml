@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DriverLicenseView">
+    <children>
+      <TextField fx:id="fNameTextField" layoutX="907.0" layoutY="122.0" prefHeight="25.0" prefWidth="171.0" promptText="First Name" />
+      <TextField fx:id="mNameTextField" layoutX="907.0" layoutY="158.0" prefHeight="25.0" prefWidth="171.0" promptText="Middle Name" />
+      <TextField fx:id="lNameTextField" layoutX="907.0" layoutY="195.0" prefHeight="25.0" prefWidth="171.0" promptText="Last Name" />
+      <TextField fx:id="contactNoTextField" layoutX="907.0" layoutY="265.0" prefHeight="25.0" prefWidth="171.0" promptText="Contact Number" />
+      <TextField fx:id="dobTextField" layoutX="907.0" layoutY="303.0" prefHeight="25.0" prefWidth="171.0" promptText="Date of Birth" />
+      <TextField fx:id="addressTextField" layoutX="907.0" layoutY="342.0" prefHeight="25.0" prefWidth="171.0" promptText="Address" />
+      <TextField fx:id="licenseTypeTextField" layoutX="907.0" layoutY="383.0" prefHeight="25.0" prefWidth="171.0" promptText="License type" />
+      <TextField fx:id="expiryDateTextField" layoutX="908.0" layoutY="423.0" prefHeight="25.0" prefWidth="171.0" promptText="Expiry Date" />
+      <Label layoutX="34.0" layoutY="14.0" text="QRTA">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="184.0" layoutY="84.0" text="Driver License Registration" />
+      <Label layoutX="92.0" layoutY="57.0" prefHeight="21.0" prefWidth="367.0" text="Queensland Road Transportation Authority System">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Group layoutX="909.0" layoutY="270.0">
+         <children>
+             <RadioButton fx:id="mRadioButton" layoutY="-38.0" mnemonicParsing="false" selected="true" text="Male">
+                 <toggleGroup>
+                     <ToggleGroup fx:id="group" />
+                 </toggleGroup>
+             </RadioButton>
+            <RadioButton fx:id="fRadioButton" layoutX="84.0" layoutY="-38.0" mnemonicParsing="false" text="Female">
+            <toggleGroup>
+                     <fx:reference source="group" />
+                 </toggleGroup>
+             </RadioButton>
+         </children>
+      </Group>
+      <Button fx:id="logOutButton" layoutX="487.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutButton" prefHeight="27.0" prefWidth="67.0" text="Log Out" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchTextField" layoutX="34.0" layoutY="130.0" prefHeight="25.0" prefWidth="709.0" promptText="Search" />
+      <TableView fx:id="tableView" editable="true" layoutX="34.0" layoutY="165.0" prefHeight="285.0" prefWidth="792.0">
+         <columns>
+            <TableColumn fx:id="colFName" prefWidth="68.5" text="fName" />
+            <TableColumn fx:id="colMName" prefWidth="58.5" text="M Name" />
+            <TableColumn fx:id="colLName" prefWidth="68.0" text="L Name" />
+            <TableColumn fx:id="colGender" prefWidth="58.0" text="Gender" />
+            <TableColumn fx:id="colContactNo" prefWidth="85.5" text="Contact No" />
+            <TableColumn fx:id="colDOB" prefWidth="64.0" text="DOB" />
+            <TableColumn fx:id="colAddress" prefWidth="108.5" text="Address" />
+            <TableColumn fx:id="colLicenseType" prefWidth="86.5" text="License Type" />
+            <TableColumn fx:id="colExpiryDate" minWidth="0.0" prefWidth="88.5" text="Expiry Date" />
+            <TableColumn fx:id="colLicenseNum" prefWidth="105.0" text="License Num" />
+         </columns>
+      </TableView>
+      <Button layoutX="909.0" layoutY="455.0" mnemonicParsing="false" onAction="#editButton" prefHeight="25.0" prefWidth="59.0" text="Edit" />
+      <Button layoutX="649.0" layoutY="463.0" mnemonicParsing="false" onAction="#deleteButton" prefHeight="25.0" prefWidth="94.0" text="Delete" />
+      <Button layoutX="36.0" layoutY="463.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Button layoutX="1037.0" layoutY="491.0" mnemonicParsing="false" onAction="#clearButton" text="Clear" />
+      <Button fx:id="registerButton" layoutX="999.0" layoutY="455.0" onAction="#registerButton" prefHeight="25.0" prefWidth="81.0" text="Register" />
+      <Button layoutX="840.0" layoutY="239.0" mnemonicParsing="false" onAction="#fetchData" prefHeight="102.0" prefWidth="45.0" text="-&gt;" />
+    </children>
+</AnchorPane>
